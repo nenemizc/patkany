@@ -8,7 +8,6 @@ document.getElementById('form')?.addEventListener('submit',(e:SubmitEvent) => {
   e.preventDefault();
   const form = document.getElementById('form') as HTMLFormElement;
   const name = new FormData(form).get('nameInput');
-  console.log(name);
   const atk = Math.floor(Math.random() * (20 - 10 + 1) + 10);
   const hp = Math.floor(Math.random() * (100 - 50 + 1) + 50);
   rats.push(new ElectricRats(name!.toString(),atk,hp));
