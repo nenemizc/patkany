@@ -7,7 +7,20 @@
     <title>patkany</title>
   </head>
   <body>
-    
+    <h1 class="h1 ms-3 me-3 mb-3">Villám patkányok</h1>
+    <div class="ms-3 me-3 mb-3">
+      <form id="form" class="form">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Adja meg a patkány nevét</label>
+          <input type="text" name="nameInput" id="name" required class="form-control">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-success">Mentés</button>
+        </div>
+      </form>
+    </div>
+    <div id="cards" class="flex-wrap d-flex"></div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
