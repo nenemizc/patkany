@@ -6,6 +6,7 @@ const rats: ElectricRats[] = [];
 
 document.getElementById('form')?.addEventListener('submit',(e:SubmitEvent) => {
   e.preventDefault();
+  document.getElementById('export')!.hidden=false;
   const form = document.getElementById('form') as HTMLFormElement;
   const name = new FormData(form).get('nameInput');
   const atk = Math.floor(Math.random() * (20 - 10 + 1) + 10);
@@ -41,4 +42,19 @@ document.getElementById('form')?.addEventListener('submit',(e:SubmitEvent) => {
   }
 
   form.reset();
+})
+document.addEventListener('DOMContentLoaded',() => {
+  const exp= document.getElementById('export');
+  exp!.hidden=true;
+  const textarea = document.getElementById('textarea');
+  textarea!.hidden=true;
+  exp!.addEventListener('click',(e:Event)=>{
+    e.preventDefault();
+    textarea!.hidden=false;
+    textarea!.textContent="";
+    textarea!.textContent="Name;ATK;HP\n";
+    for (const rat of rats){
+      textarea!.textContent+=rat.toCSV();
+    }
+  })
 })

@@ -32,4 +32,8 @@ export class ElectricRats{
     public get hp(){
         return this._hp;
     }
+
+    toCSV(): string {
+    return `${this.name};${this.atk};${this.hp}\n`;
+}
 }
